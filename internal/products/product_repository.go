@@ -42,6 +42,6 @@ func (r *ProductRepository) Update(p Product) error {
 	return r.db.Save(&p).Error
 }
 
-func (r *ProductRepository) Delete(id string) error {
-	return r.db.Delete(&Product{}, "id = ?", id).Error
+func (r *ProductRepository) Delete(p Product) error {
+	return r.db.Delete(&p).Error
 }

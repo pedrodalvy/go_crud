@@ -50,5 +50,10 @@ func (s *Service) UpdateProduct(id string, name string) error {
 }
 
 func (s *Service) DeleteProduct(id string) error {
-	return s.productRepository.Delete(id)
+	p, err := s.productRepository.Find(id)
+	if err != nil {
+		return err
+	}
+
+	return s.productRepository.Delete(p)
 }
