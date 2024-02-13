@@ -5,12 +5,12 @@ import (
 )
 
 type Service struct {
-	productRepository ProductRepository
+	productRepository Repository
 }
 
 func NewService(db *gorm.DB) *Service {
 	return &Service{
-		productRepository: *NewProductRepository(db),
+		productRepository: *NewRepository(db),
 	}
 }
 

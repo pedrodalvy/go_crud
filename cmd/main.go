@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/joho/godotenv"
+	"go_crud/internal/database"
 	"go_crud/internal/http"
-	"go_crud/internal/infrastructure/database"
 	"log"
 )
 

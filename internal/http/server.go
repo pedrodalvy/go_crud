@@ -3,6 +3,7 @@ package http
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	"go_crud/internal/products"
 	"gorm.io/gorm"
 )
 
@@ -26,7 +27,7 @@ func (s *Server) Start(port string) error {
 
 	api := app.Group("/api")
 
-	productsController := NewProductsController(s.db)
+	productsController := products.NewController(s.db)
 
 	api.Get("/products", productsController.GetProducts)
 	api.Get("/products/:id", productsController.FindProduct)
